@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AGENTE IA - ÁUDIO PANK</title>
+  </head>
+  <body style="background-color: #0d0d0d; color: white; font-family: sans-serif; padding: 2rem;">
+    <h1>AGENTE IA - ÁUDIO PANK</h1>
+    <div class="tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+      <button onclick="askTheme('ia_vertical')">🤖 Saber sobre IA</button>
+      <button onclick="askTheme('futebol')">⚽ Futebol Brasileiro</button>
+      <button onclick="askTheme('cinema')">📺 Curiosidades da TV</button>
+    </div>
+    <div id="resposta" style="margin-top: 2rem;"></div>
+
+    <script>
+      async function askTheme(theme) {
+        const res = await fetch('/api/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ theme })
+        });
+        const data = await res.json();
+        document.getElementById('resposta').innerHTML = '<p>' + data.answer + '</p>';
+      }
+    </script>
+  </body>
+</html>

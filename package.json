@@ -1,0 +1,23 @@
+{
+  "name": "agente-ia-audio-pank",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "mic-recorder-to-mp3": "^2.2.2",
+    "react": "^18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^18.2.0",
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1",
+    "openai": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^6.3.5"
+  }
+}
